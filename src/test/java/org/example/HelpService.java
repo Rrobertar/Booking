@@ -39,7 +39,7 @@ public class HelpService{
     }
 
     @Test
-     public void HelpService(){
+     public void HelpService() {
         driver.get("https://www.booking.com/");
 
         SoftAssert softAssert = new SoftAssert();
@@ -57,17 +57,16 @@ public class HelpService{
         assertTrue("The button is not working! ", acceptcokie.isEnabled());
         acceptcokie.click();
 
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-        WebElement HelpButton= wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#b2indexPage > div:nth-child(4) > div > div > header > div > nav.Header_bar > div.c624d7469d.f034cf5568.dab7c5c6fa.c62ffa0b45.a3214e5942 > span:nth-child(3) > a > span > span > svg")));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement HelpButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#b2indexPage > div:nth-child(4) > div > div > header > div > nav.Header_bar > div.c624d7469d.f034cf5568.dab7c5c6fa.c62ffa0b45.a3214e5942 > span:nth-child(3) > a > span > span > svg")));
         assertTrue("The button is not visible! ", HelpButton.isDisplayed());
         HelpButton.click();
 
-        WebElement PageisOpen= driver.findElement(By.cssSelector("#b2helpPage"));
-        assertTrue("Page si not open!",PageisOpen.isDisplayed());
-        if(PageisOpen.isDisplayed()){
+        WebElement PageisOpen = driver.findElement(By.cssSelector("#b2helpPage"));
+        assertTrue("Page si not open!", PageisOpen.isDisplayed());
+        if (PageisOpen.isDisplayed()) {
             System.out.println("The HelpCenter page is open! ");
-        }
-        else {
+        } else {
             System.out.println("The HelpCenter page is not open! ");
         }
 
@@ -76,22 +75,24 @@ public class HelpService{
         js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", CancellationOption);
         assertTrue("The button is not visible! ", CancellationOption.isDisplayed());
         CancellationOption.click();
-        if(CancellationOption.isDisplayed()){
+        if (CancellationOption.isDisplayed()) {
             System.out.println("Cancellation Option is displayed and clickable! ");
-        }
-        else{
+        } else {
             System.out.println("Cancellation Option is not displayed and clickable! ");
         }
 
         WebElement CancellationList = driver.findElement(By.cssSelector("#maincontent > div > div > div > div > div.c624d7469d.a0e60936ad.a3214e5942 > div:nth-child(1) > div > div"));
         assertTrue("The list with details about cancellation is not open! ", CancellationList.isDisplayed());
-        if(CancellationList.isDisplayed()){
+        if (CancellationList.isDisplayed()) {
             System.out.println("Cancellation list is open! ");
-        }
-        else{
+        } else {
             System.out.println("Cancellation list is not open! ");
-
         }
+
+    }
+        @After
+        public void teardown() {
+            driver.quit();
 
     }
 

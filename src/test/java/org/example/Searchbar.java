@@ -66,7 +66,7 @@ public class Searchbar {
             searchbar.sendKeys("iasi");
 
             WebElement data = driver.findElement(By.cssSelector("#indexsearch > div.hero-banner-searchbox > div > form > div > div:nth-child(2) > div > div > button:nth-child(2) > span"));
-            assertTrue("The table with date is not open! ", data.isDisplayed());
+            assertTrue(" The table with date is not open! ", data.isDisplayed());
             data.click();
 
 

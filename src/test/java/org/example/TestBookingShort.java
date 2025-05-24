@@ -39,7 +39,13 @@ public class TestBookingShort {
     HelpService test7=  new HelpService();
         test7.setup();
         test7.HelpService();
-        test7.setup();
+        test7.teardown();
+
+    Attraction test8=  new Attraction();
+        test8.setup();
+        test8.Attraction();
+        test8.teardown();
+
 
 
 
